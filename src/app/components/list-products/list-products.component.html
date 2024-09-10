@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Lista de productos</h1>
+  <button type="button" class="btn btn-primary" routerLink="/add" >Agregar prodcuto</button>
+
+
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Disponibles</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let product of listProduct" class="table-active">
+
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+        <td>
+          <button type="button" class="btn btn-info  btn-sm" routerLink="/edit/{{product.id}}">Editar</button>
+          <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
